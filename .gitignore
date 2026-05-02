@@ -1,0 +1,17 @@
+# Local terraform directory (Plugins)
+.terraform/
+
+# State files (Source of Truth)
+*.tfstate
+*.tfstate.*
+
+# Sensitive variables
+*.tfvars
+*.tfvars.json
+
+# Crash logs
+crash.log
+
+# Python cache
+__pycache__/
+*.py[cod]
