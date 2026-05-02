@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket         = "bhargav-terraform-state-bucket" # Use the name from Step 1
+    key            = "state/terraform.tfstate"
+    region         = "ap-south-1"
+  }
+}
+
 # 1. SET UP THE TWO REGIONS
 provider "aws" {
   alias  = "mumbai"
