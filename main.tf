@@ -5,7 +5,7 @@ terraform {
     region         = "ap-south-1"
   }
 }
-
+#testing
 # 1. SET UP THE TWO REGIONS
 provider "aws" {
   alias  = "mumbai"
