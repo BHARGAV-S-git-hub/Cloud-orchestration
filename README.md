@@ -1,7 +1,8 @@
-Cloud-FinOps Orchestrator
+## Cloud-FinOps Orchestrator
+
 A real-time Multi-Region Network Operations Center (NOC) that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
 
- The Tech Stack
+## The Tech Stack
 Cloud Platform: AWS (EC2, S3 Remote State)
 
 Infrastructure as Code: Terraform
@@ -12,7 +13,7 @@ Cloud SDK: Boto3 (AWS Spot Price Telemetry)
 
 Automation/CI-CD: GitHub Actions
 
- Key Technical Features
+ ## Key Technical Features
 1. Multi-Region High Availability (HA)
 Proactively manages redundant instances across Asia-South-1 (Mumbai) and US-East-1 (Virginia) to eliminate single points of failure.
 
@@ -41,7 +42,7 @@ Continuous Deployment: Automated infrastructure provisioning on every push.
 
 "Nuclear" Destroy: A manual workflow dispatch for rapid, total resource decommissioning to prevent unauthorized budget overruns.
 
- Quick Start
+ ## Quick Start
 Provision Infrastructure:
 terraform init
 terraform apply -auto-approve
