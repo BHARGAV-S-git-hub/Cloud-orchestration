@@ -1,37 +1,54 @@
 Cloud-FinOps Orchestrator
-
 A real-time Multi-Region Network Operations Center (NOC) that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
 
-🛠️ The Tech Stack
-Cloud: AWS (EC2, S3 Backend)
+ The Tech Stack
+Cloud Platform: AWS (EC2, S3 Remote State)
 
-IaC: Terraform
+Infrastructure as Code: Terraform
 
-Backend: Python (Flask)
+Backend Engine: Python (Flask)
 
-SDK: Boto3 (AWS Price Fetching)
+Cloud SDK: Boto3 (AWS Spot Price Telemetry)
 
-CI/CD: GitHub Actions
+Automation/CI-CD: GitHub Actions
 
-⚡ Key Technical Features
-Multi-Region High Availability (HA): Proactively manages redundant instances across Asia-South-1 (Mumbai) and US-East-1 (Virginia) to eliminate single points of failure.
+ Key Technical Features
+1. Multi-Region High Availability (HA)
+Proactively manages redundant instances across Asia-South-1 (Mumbai) and US-East-1 (Virginia) to eliminate single points of failure.
 
-Health-Aware Routing: An integrated Health Check Heartbeat that monitors ICMP connectivity. If a region becomes "Unreachable," the orchestrator triggers an immediate Failover to the standby region, bypassing cost or latency preferences to ensure 100% uptime.
+2. Health-Aware Routing
+Integrated Health Check Heartbeat monitoring ICMP connectivity.
 
-Hybrid State Management: Leverages an S3 Remote Backend for persistent infrastructure state and locking.
+Failover Logic: If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
 
-Auto-Reconciliation: Python-driven State Synchronization that executes terraform refresh to detect dynamic IP changes from manual AWS reboots.
+Safety First: This bypasses cost or latency preferences to ensure 100% service uptime.
 
-Priority-Weighted Engine:
+3. Hybrid State Management
+Utilizes an S3 Remote Backend for persistent infrastructure state and state locking, ensuring consistency across local and CI/CD environments.
+
+4. Auto-Reconciliation Engine
+A Python-driven State Synchronization loop that executes terraform refresh to automatically detect dynamic Public IP changes resulting from manual AWS instance reboots.
+
+5. Priority-Weighted Decision Engine
+The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
 
 Latency Mode: Optimizes the network path based on real-time ICMP telemetry.
 
 Profit Mode: Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
 
-Conflict Logic: Health > Performance > Cost.
+6. GitHub Actions CI/CD
+Continuous Deployment: Automated infrastructure provisioning on every push.
 
-GitHub Actions CI/CD:
+"Nuclear" Destroy: A manual workflow dispatch for rapid, total resource decommissioning to prevent unauthorized budget overruns.
 
-Automated infrastructure provisioning on push.
+ Quick Start
+Provision Infrastructure:
+terraform init
+terraform apply -auto-approve
 
-Nuclear Destroy: Manual workflow dispatch for rapid resource decommissioning to prevent budget overruns.
+Launch the NOC Dashboard:
+
+python app.py
+
+Automate Lifecycle:
+Push code changes to GitHub to trigger the automated CI/CD pipeline.
