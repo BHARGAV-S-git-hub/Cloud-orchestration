@@ -42,12 +42,6 @@ A real-time Multi-Region **Network Operations Center (NOC)** that automates AWS 
 
 ###  4. Auto-Reconciliation Engine
 
-* Python-driven synchronization loop.
-* Executes:
-
-  ```bash
-  terraform refresh
-  ```
 * Automatically detects:
 
   * Public IP changes
