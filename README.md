@@ -1,20 +1,11 @@
-# 🚀 Cloud-FinOps Orchestrator
+#  Cloud-FinOps Orchestrator
 
-A real-time **Multi-Region Network Operations Center (NOC)** that automates AWS infrastructure using a **triple-constraint decision engine**:
-
-* 🟢 **Availability (Health)**
-* ⚡ **Performance (Latency)**
-* 💰 **Cost (FinOps)**
+A real-time Multi-Region Network Operations Center (NOC) that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
 
 ---
 
-## 📌 Overview
 
-Cloud-FinOps Orchestrator is designed to intelligently manage cloud infrastructure across multiple AWS regions. It ensures **high availability, optimal performance, and cost efficiency** through automated monitoring, failover, and decision-making.
-
----
-
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category           | Technology                                 |
 | ------------------ | ------------------------------------------ |
@@ -30,36 +21,25 @@ Cloud-FinOps Orchestrator is designed to intelligently manage cloud infrastructu
 
 ### 🌍 1. Multi-Region High Availability (HA)
 
-* Manages redundant instances across:
-
-  * **Asia-South-1 (Mumbai)**
-  * **US-East-1 (Virginia)**
-* Eliminates single points of failure.
+* Proactively manages redundant instances across Asia-South-1 (Mumbai) and US-East-1 (Virginia) to eliminate single points of failure.
 
 ---
 
 ### ❤️ 2. Health-Aware Routing
 
-* Integrated **ICMP-based heartbeat monitoring**.
+Integrated Health Check Heartbeat monitoring ICMP connectivity.
 * 🚨 **Failover Logic**:
 
-  * Automatically switches to standby region if primary becomes unreachable.
+  If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
 * 🛡️ **Priority Rule**:
 
-  * Health overrides cost and latency → ensures maximum uptime.
+  This bypasses cost or latency preferences to ensure 100% service uptime.
 
 ---
 
 ### 🗂️ 3. Hybrid State Management
 
-* Uses **S3 Remote Backend** for:
-
-  * Persistent infrastructure state
-  * State locking
-* Ensures consistency across:
-
-  * Local development
-  * CI/CD pipelines
+Utilizes an S3 Remote Backend for persistent infrastructure state and state locking, ensuring consistency across local and CI/CD environments.
 
 ---
 
@@ -88,10 +68,10 @@ Health > Performance > Cost
 
 * ⚡ **Latency Mode**:
 
-  * Optimizes routing using real-time ICMP telemetry.
+  Optimizes the network path based on real-time ICMP telemetry.
 * 💰 **Profit Mode**:
 
-  * Minimizes cost using live **Spot Instance pricing** via Boto3.
+  Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
 
 ---
 
