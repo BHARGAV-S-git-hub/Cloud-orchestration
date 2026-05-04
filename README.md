@@ -1,6 +1,6 @@
 #  Cloud-FinOps Orchestrator
 
-A real-time Multi-Region Network Operations Center (NOC) that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
+A real-time Multi-Region **Network Operations Center (NOC)** that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
 
 ---
 
