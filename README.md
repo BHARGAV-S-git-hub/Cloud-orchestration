@@ -65,7 +65,7 @@ A real-time Multi-Region **Network Operations Center (NOC)** that automates AWS 
 
 
 
-### 🔄 6. GitHub Actions CI/CD
+###  6. GitHub Actions CI/CD
 
 *  **Continuous Deployment**:   Infrastructure auto-provisioned on every push.
   
