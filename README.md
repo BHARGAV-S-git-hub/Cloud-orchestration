@@ -57,7 +57,7 @@ A real-time Multi-Region Network Operations Center (NOC) that automates AWS infr
 
 ###  5. Priority-Weighted Decision Engine
 
-*The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
+* The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
 
 *  **Latency Mode**:  Optimizes the network path based on real-time ICMP telemetry.
   
@@ -67,14 +67,12 @@ A real-time Multi-Region Network Operations Center (NOC) that automates AWS infr
 
 ### 🔄 6. GitHub Actions CI/CD
 
-*  **Continuous Deployment**:
-  
-  Infrastructure auto-provisioned on every push.
+*  **Continuous Deployment**:   Infrastructure auto-provisioned on every push.
   
 *  **Nuclear Destroy Mode**:
 
-   Manual workflow to instantly destroy all resources
-   Prevents unexpected cost overruns
+   *  Manual workflow to instantly destroy all resources
+   *  Prevents unexpected cost overruns
 
 ---
 
