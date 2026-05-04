@@ -24,11 +24,11 @@ Automation/CI-CD: GitHub Actions
 
 **2. Health-Aware Routing**
 
-   * **Integrated Health Check Heartbeat monitoring ICMP connectivity.
+   * Integrated Health Check Heartbeat monitoring ICMP connectivity.
 
-   * **Failover Logic: If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
+   * Failover Logic: If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
 
-   * **Safety First: This bypasses cost or latency preferences to ensure 100% service uptime.
+   * Safety First: This bypasses cost or latency preferences to ensure 100% service uptime.
 
 **3. Hybrid State Management**
 
@@ -40,15 +40,15 @@ Automation/CI-CD: GitHub Actions
 
 **5. Priority-Weighted Decision Engine**
 
-   * **The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
+   * The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
 
-   * **Latency Mode: Optimizes the network path based on real-time ICMP telemetry.
+   * Latency Mode: Optimizes the network path based on real-time ICMP telemetry.
 
-   * **Profit Mode: Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
+   * Profit Mode: Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
 
 **6. GitHub Actions CI/CD**
 
-   * **Continuous Deployment: Automated infrastructure provisioning on every push.
+   * Continuous Deployment: Automated infrastructure provisioning on every push.
 
    * **Nuclear Destroy: A manual workflow dispatch for rapid, total resource decommissioning to prevent unauthorized budget overruns.
 
@@ -56,14 +56,14 @@ Automation/CI-CD: GitHub Actions
  ## Quick Start
 **Provision Infrastructure:**
 
-   * **terraform init
+   * terraform init
 
-   * **terraform apply
+   * terraform apply
 
 **Launch the NOC Dashboard:**
 
-   * **python app.py
+   * python app.py
 
 **Automate Lifecycle:**
 
-   * **Push code changes to GitHub to trigger the automated CI/CD pipeline.
+   * Push code changes to GitHub to trigger the automated CI/CD pipeline.
