@@ -27,7 +27,7 @@ A real-time Multi-Region Network Operations Center (NOC) that automates AWS infr
 
 ###  2. Health-Aware Routing
 
-Integrated Health Check Heartbeat monitoring ICMP connectivity.
+* Integrated Health Check Heartbeat monitoring ICMP connectivity.
 *  **Failover Logic**:   If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
   
 *  **Priority Rule** :   This bypasses cost or latency preferences to ensure 100% service uptime.
@@ -36,7 +36,7 @@ Integrated Health Check Heartbeat monitoring ICMP connectivity.
 
 ###  3. Hybrid State Management
 
-Utilizes an S3 Remote Backend for persistent infrastructure state and state locking, ensuring consistency across local and CI/CD environments.
+* Utilizes an S3 Remote Backend for persistent infrastructure state and state locking, ensuring consistency across local and CI/CD environments.
 
 
 
@@ -57,11 +57,7 @@ Utilizes an S3 Remote Backend for persistent infrastructure state and state lock
 
 ###  5. Priority-Weighted Decision Engine
 
-Decision hierarchy:
-
-```
-Health > Performance > Cost
-```
+*The system resolves routing conflicts using a strict hierarchy: Health > Performance > Cost.
 
 *  **Latency Mode**:  Optimizes the network path based on real-time ICMP telemetry.
   
@@ -72,12 +68,13 @@ Health > Performance > Cost
 ### 🔄 6. GitHub Actions CI/CD
 
 *  **Continuous Deployment**:
-
-  * Infrastructure auto-provisioned on every push.
+  
+  Infrastructure auto-provisioned on every push.
+  
 *  **Nuclear Destroy Mode**:
 
-  * Manual workflow to instantly destroy all resources
-  * Prevents unexpected cost overruns
+   Manual workflow to instantly destroy all resources
+   Prevents unexpected cost overruns
 
 ---
 
