@@ -1,7 +1,8 @@
 Cloud-FinOps Orchestrator
+
 A real-time Multi-Region Network Operations Center (NOC) that automates AWS infrastructure through a triple-constraint engine: Cost (FinOps), Performance (Latency), and Availability (Health).
 
-The Tech Stack
+🛠️ The Tech Stack
 Cloud: AWS (EC2, S3 Backend)
 
 IaC: Terraform
@@ -12,30 +13,25 @@ SDK: Boto3 (AWS Price Fetching)
 
 CI/CD: GitHub Actions
 
-Key Technical Features
-Multi-Region Strategy: Manages instances in Mumbai (Primary) and Virginia (Standby) using Terraform providers.
+⚡ Key Technical Features
+Multi-Region High Availability (HA): Proactively manages redundant instances across Asia-South-1 (Mumbai) and US-East-1 (Virginia) to eliminate single points of failure.
 
-Hybrid State Management: Uses an S3 Remote Backend for state persistence.
+Health-Aware Routing: An integrated Health Check Heartbeat that monitors ICMP connectivity. If a region becomes "Unreachable," the orchestrator triggers an immediate Failover to the standby region, bypassing cost or latency preferences to ensure 100% uptime.
 
-Auto-Reconciliation: Python logic triggers terraform refresh to automatically detect IP changes from manual AWS restarts.
+Hybrid State Management: Leverages an S3 Remote Backend for persistent infrastructure state and locking.
 
-Priority Engine:
+Auto-Reconciliation: Python-driven State Synchronization that executes terraform refresh to detect dynamic IP changes from manual AWS reboots.
 
-Latency Mode: Prioritizes the fastest network path (ICMP telemetry).
+Priority-Weighted Engine:
 
-Profit Mode: Switches to the cheapest region using live Spot rates.
+Latency Mode: Optimizes the network path based on real-time ICMP telemetry.
 
-Conflict Resolution: Performance (Latency) always overrides Cost if both are enabled.
+Profit Mode: Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
+
+Conflict Logic: Health > Performance > Cost.
 
 GitHub Actions CI/CD:
 
-Automated deployment of infrastructure on push.
+Automated infrastructure provisioning on push.
 
-Nuclear Destroy: Manual workflow dispatch to instantly wipe all AWS resources to prevent cost leakage.
-
-Quick Start
-Provision: terraform init & terraform apply.
-
-Launch: python app.py.
-
-Automate: Push to GitHub to trigger the CI/CD pipeline.
+Nuclear Destroy: Manual workflow dispatch for rapid resource decommissioning to prevent budget overruns.
