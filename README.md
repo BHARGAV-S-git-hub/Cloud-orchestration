@@ -28,12 +28,9 @@ A real-time Multi-Region Network Operations Center (NOC) that automates AWS infr
 ###  2. Health-Aware Routing
 
 Integrated Health Check Heartbeat monitoring ICMP connectivity.
-*  **Failover Logic**:
-
-  If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
-*  **Priority Rule**:
-
-  This bypasses cost or latency preferences to ensure 100% service uptime.
+*  **Failover Logic**:   If a region becomes "Unreachable," the orchestrator triggers an immediate failover to the standby region.
+  
+*  **Priority Rule** :   This bypasses cost or latency preferences to ensure 100% service uptime.
 
 
 
@@ -66,12 +63,9 @@ Decision hierarchy:
 Health > Performance > Cost
 ```
 
-*  **Latency Mode**:
-
-  Optimizes the network path based on real-time ICMP telemetry.
-*  **Profit Mode**:
-
-  Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
+*  **Latency Mode**:  Optimizes the network path based on real-time ICMP telemetry.
+  
+*  **Profit Mode** :  Minimizes cloud burn-rate using live Spot Instance market data via Boto3.
 
 
 
